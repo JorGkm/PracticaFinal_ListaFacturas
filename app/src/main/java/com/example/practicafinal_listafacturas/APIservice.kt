@@ -6,6 +6,6 @@ import retrofit2.http.Url
 
 
 interface APIservice {
-    @GET("facturas/")
+    @GET("facturaRafa")
     suspend fun getFacturas() : Response<ListaFacturas>
 }
