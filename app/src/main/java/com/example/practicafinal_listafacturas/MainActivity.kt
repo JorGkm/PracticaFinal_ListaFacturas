@@ -1,11 +1,14 @@
 package com.example.practicafinal_listafacturas
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.lifecycle.lifecycleScope
 import com.example.practicafinal_listafacturas.databinding.ActivityMainBinding
+import kotlinx.coroutines.launch
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -25,6 +28,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
             .replace(R.id.main, FacturasFragment())
@@ -34,7 +38,7 @@ class MainActivity : AppCompatActivity() {
     }
     private fun getRetrofit(): APIservice {
         return Retrofit.Builder()
-        .baseUrl("https://z3jje.wiremockapi.cloud/")
+        .baseUrl("https://l4w6d.wiremockapi.cloud/")
         .addConverterFactory(GsonConverterFactory.create())
         .build()
         .create(APIservice::class.java)
